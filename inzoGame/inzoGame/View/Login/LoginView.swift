@@ -9,10 +9,14 @@ import SwiftUI
 import Alamofire
 struct LoginView: View {
     
-    @State private var username:String = ""
-    @State private var password:String = ""
+    @State private var username:String = "yunus"
+    @State private var password:String = "1234"
+    @State private var uyariMesaji:String = ""
     @State private var sayfaGecis:Bool = false
-    @State private var showModal = false
+    let userDefaults = UserDefaults.standard
+    
+    
+        
     var body: some View {
         NavigationView{
             Form{
@@ -38,16 +42,24 @@ struct LoginView: View {
                                 
                                 let stateField   = jsonObject?["message"] as? String
                                 
-                               
+
                                 if stateField == "success"{
                                     
                                     sayfaGecis = true
+                                    userDefaults.set(username, forKey: "username")
+                                    userDefaults.set(password, forKey: "password")
+                                    userDefaults.set(tokenField, forKey: "tokenField")
+                                    
+                                    
                                    
-                        }
+                                }else{
+                                    uyariMesaji = "Tekrar deneyiniz"
+                                }
                     }
                     }
                         
                     }
+                            Text("\(uyariMesaji)")
                 
                
                
@@ -62,5 +74,6 @@ struct LoginView: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
+       
     }
 }
