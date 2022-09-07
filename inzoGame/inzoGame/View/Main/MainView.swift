@@ -30,14 +30,11 @@ struct MainView: View {
     
     var body: some View {
         VStack{
-         
+         Spacer()
             Text("Kullanici Adi : \(username)")
             Text(" IRK : \(userRace)")
             Text(" Level : \(userLevel)")
-            Text(" Savaş gucu : \(userBattleValue)")
-            Text(" Para : \(userGold)")
-            Text(" Tecrube : \(userExp)")
-            Text(" Can  : \(userHpNow)")
+           Spacer()
            
                 .onAppear {
                 username = userDefaults.object(forKey: "username")! as! String
@@ -79,8 +76,25 @@ struct MainView: View {
 
                               }.resume()
             }
-            Spacer()
+            
+          
         
+        }
+        VStack{
+            Text(" Savaş gucu : \(userBattleValue)")
+            Text(" Para : \(userGold)")
+            Text(" Tecrube : \(userExp)")
+            Text(" Can  : \(userHpNow)")
+            Text(" Guc : \(userAbPow)")
+            Text(" Savunma  : \(userAbDef)")
+            Spacer()
+        }
+        VStack{
+            Text(" Yapilan Savas : \(userStatbattle)")
+            Text(" Kazanilan Savas : \(userStatWin)")
+            Text(" Kaybedilen Savas : \(userStatLoss)")
+            Text(" Berabare Biten Savas : \(userStatDraw)")
+            Spacer()
         }
         
     }
