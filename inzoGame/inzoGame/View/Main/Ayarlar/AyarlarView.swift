@@ -8,14 +8,30 @@
 import SwiftUI
 
 struct AyarlarView: View {
+    let userDefaults = UserDefaults.standard
+    @State private var sayfaGecisAyarlar:Bool = false
+  
     var body: some View {
         NavigationView {
            
                 Section {
-                    Text("Hello, world!")
+                    Text("Ayarlar")
+                    
+                      
+                    
+                    
                 }
              
-                .navigationTitle("Ayarlar")
+                .navigationTitle("Ayarlar Page")
+                .fullScreenCover(isPresented: $sayfaGecisAyarlar) { WelcomeView() }
+                .toolbar {
+                    Button("Cikis yap"){
+                        userDefaults.set("none", forKey: "username")
+                        sayfaGecisAyarlar = true
+                        print("none oldu")
+                    }
+                }
+                
         }
     }
 }

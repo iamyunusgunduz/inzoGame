@@ -19,6 +19,11 @@
 		0120936728CA188C006AD346 /* SavasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0120936628CA188C006AD346 /* SavasView.swift */; };
 		0120936928CA18A3006AD346 /* GenelBakisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0120936828CA18A3006AD346 /* GenelBakisView.swift */; };
 		0120936D28CA1AE2006AD346 /* AyarlarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0120936C28CA1AE2006AD346 /* AyarlarView.swift */; };
+		01FACCDA28CA8A3F00DB5322 /* ZayifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FACCD928CA8A3F00DB5322 /* ZayifView.swift */; };
+		01FACCDC28CA8A5000DB5322 /* OrtaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FACCDB28CA8A5000DB5322 /* OrtaView.swift */; };
+		01FACCDE28CA8A6A00DB5322 /* GucluView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FACCDD28CA8A6A00DB5322 /* GucluView.swift */; };
+		01FACCE028CA8AA000DB5322 /* RastgeleRakipSavasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FACCDF28CA8AA000DB5322 /* RastgeleRakipSavasView.swift */; };
+		01FACCE228CA8AB300DB5322 /* EsitVeyaGucluRakipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FACCE128CA8AB300DB5322 /* EsitVeyaGucluRakipView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +40,11 @@
 		0120936628CA188C006AD346 /* SavasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavasView.swift; sourceTree = "<group>"; };
 		0120936828CA18A3006AD346 /* GenelBakisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenelBakisView.swift; sourceTree = "<group>"; };
 		0120936C28CA1AE2006AD346 /* AyarlarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AyarlarView.swift; sourceTree = "<group>"; };
+		01FACCD928CA8A3F00DB5322 /* ZayifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZayifView.swift; sourceTree = "<group>"; };
+		01FACCDB28CA8A5000DB5322 /* OrtaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrtaView.swift; sourceTree = "<group>"; };
+		01FACCDD28CA8A6A00DB5322 /* GucluView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GucluView.swift; sourceTree = "<group>"; };
+		01FACCDF28CA8AA000DB5322 /* RastgeleRakipSavasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RastgeleRakipSavasView.swift; sourceTree = "<group>"; };
+		01FACCE128CA8AB300DB5322 /* EsitVeyaGucluRakipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EsitVeyaGucluRakipView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +153,8 @@
 		0120936228CA185D006AD346 /* Savas */ = {
 			isa = PBXGroup;
 			children = (
+				01FACCD628CA89DB00DB5322 /* YaratikAvi */,
+				01FACCD728CA89E600DB5322 /* RakipAvi */,
 				0120936628CA188C006AD346 /* SavasView.swift */,
 			);
 			path = Savas;
@@ -162,6 +174,25 @@
 				0120936C28CA1AE2006AD346 /* AyarlarView.swift */,
 			);
 			path = Ayarlar;
+			sourceTree = "<group>";
+		};
+		01FACCD628CA89DB00DB5322 /* YaratikAvi */ = {
+			isa = PBXGroup;
+			children = (
+				01FACCD928CA8A3F00DB5322 /* ZayifView.swift */,
+				01FACCDB28CA8A5000DB5322 /* OrtaView.swift */,
+				01FACCDD28CA8A6A00DB5322 /* GucluView.swift */,
+			);
+			path = YaratikAvi;
+			sourceTree = "<group>";
+		};
+		01FACCD728CA89E600DB5322 /* RakipAvi */ = {
+			isa = PBXGroup;
+			children = (
+				01FACCDF28CA8AA000DB5322 /* RastgeleRakipSavasView.swift */,
+				01FACCE128CA8AB300DB5322 /* EsitVeyaGucluRakipView.swift */,
+			);
+			path = RakipAvi;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,11 +272,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				0117D5ED28C7C6FA00122D5C /* LoginView.swift in Sources */,
+				01FACCDE28CA8A6A00DB5322 /* GucluView.swift in Sources */,
 				0120936D28CA1AE2006AD346 /* AyarlarView.swift in Sources */,
+				01FACCE228CA8AB300DB5322 /* EsitVeyaGucluRakipView.swift in Sources */,
 				0117D5EF28C7C7D800122D5C /* RegisterView.swift in Sources */,
 				0120936528CA1874006AD346 /* ProfilView.swift in Sources */,
 				0117D5DE28C7C31400122D5C /* WelcomeView.swift in Sources */,
 				0120936728CA188C006AD346 /* SavasView.swift in Sources */,
+				01FACCDA28CA8A3F00DB5322 /* ZayifView.swift in Sources */,
+				01FACCDC28CA8A5000DB5322 /* OrtaView.swift in Sources */,
+				01FACCE028CA8AA000DB5322 /* RastgeleRakipSavasView.swift in Sources */,
 				0117D5F628C7D92000122D5C /* MainView.swift in Sources */,
 				0117D5DC28C7C31400122D5C /* inzoGameApp.swift in Sources */,
 				0120936928CA18A3006AD346 /* GenelBakisView.swift in Sources */,

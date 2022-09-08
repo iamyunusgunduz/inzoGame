@@ -12,11 +12,11 @@ struct LoginView: View {
     @State private var username:String = "yunus"
     @State private var password:String = "1234"
     @State private var uyariMesaji:String = ""
-    @State private var sayfaGecis:Bool = false
+    @State private var sayfaGecisLogin:Bool = false
     let userDefaults = UserDefaults.standard
     
     
-        
+
     var body: some View {
         NavigationView{
             Form{
@@ -28,35 +28,7 @@ struct LoginView: View {
                     Button("GIRIS YAP") {
                         print("Debug Username : \(username)")
                         print("Debug Password : \(password)")
-                        AF.request("http://yunusgunduz.site/inzoApi/public/api/login?username=\(username)&password=\(password)", method:.post,encoding: JSONEncoding.default) .responseJSON { [self] (response) in
-                            
-                            
-                            if response.response?.statusCode == 200{
-                                let data = response.data!
-                                
-                                let object = try? JSONSerialization.jsonObject(with: data, options: [])
-
-                                let jsonObject =  object as? [String: Any]
-
-                                let tokenField   = jsonObject?["access_token"] as? String
-                                
-                                let stateField   = jsonObject?["message"] as? String
-                                
-
-                                if stateField == "success"{
-                                    
-                                    sayfaGecis = true
-                                    userDefaults.set(username, forKey: "username")
-                                    userDefaults.set(password, forKey: "password")
-                                    userDefaults.set(tokenField, forKey: "tokenField")
-                                    
-                                    
-                                   
-                                }else{
-                                    uyariMesaji = "Tekrar deneyiniz"
-                                }
-                    }
-                    }
+                        extractedFunc()
                         
                     }
                             Text("\(uyariMesaji)")
@@ -64,11 +36,47 @@ struct LoginView: View {
                
                
                 
-            }.navigationTitle("Login").fullScreenCover(isPresented: $sayfaGecis) { MainView() }
+            }.navigationTitle("Login").fullScreenCover(isPresented: $sayfaGecisLogin) { MainView() }
             
         }
         
     }
+    
+    
+    
+    
+fileprivate func extractedFunc() -> DataRequest {
+    return AF.request("http://yunusgunduz.site/inzoApi/public/api/login?username=\(username)&password=\(password)", method:.post,encoding: JSONEncoding.default) .responseJSON { [self] (response) in
+        
+        
+        if response.response?.statusCode == 200{
+            let data = response.data!
+            
+            let object = try? JSONSerialization.jsonObject(with: data, options: [])
+            
+            let jsonObject =  object as? [String: Any]
+            
+            let tokenField   = jsonObject?["access_token"] as? String
+            
+            let stateField   = jsonObject?["message"] as? String
+            
+            
+            if stateField == "success"{
+                
+                sayfaGecisLogin = true
+                userDefaults.set(username, forKey: "username")
+                userDefaults.set(password, forKey: "password")
+                userDefaults.set(tokenField, forKey: "tokenField")
+                
+                
+                
+            }else{
+                uyariMesaji = "Tekrar deneyiniz"
+            }
+        }
+    }
+}
+
 }
 
 struct LoginView_Previews: PreviewProvider {

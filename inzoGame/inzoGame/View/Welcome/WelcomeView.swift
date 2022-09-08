@@ -7,13 +7,30 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct WelcomeView: View {
+    @State private var sayfaGecisWelcome:Bool = false
+    let userDefaults = UserDefaults.standard
+    
+   
     var body: some View {
         NavigationView{
             
             VStack(alignment: .center){
                 Spacer()
+                    .onAppear{
+                        var username = userDefaults.object(forKey: "username") as! String
+                    
+                      print("gitrdi")
+                        if      username != "none" {
+                            sayfaGecisWelcome = true
+                            
+                        }else {
+                            sayfaGecisWelcome = false
+                        }
+                    }
                 NavigationLink(destination: LoginView()) {
+                    
+                    
                     Text("Giris Yap")
                 }
                 
@@ -24,14 +41,14 @@ struct ContentView: View {
                 Spacer()
             }.navigationTitle( Text("INZO GAME"))
             
-            
+                .fullScreenCover(isPresented: $sayfaGecisWelcome) { MainView() }
         }
             
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+ struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        WelcomeView()
     }
 }
