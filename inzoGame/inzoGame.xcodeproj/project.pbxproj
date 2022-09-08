@@ -15,6 +15,10 @@
 		0117D5EF28C7C7D800122D5C /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0117D5EE28C7C7D800122D5C /* RegisterView.swift */; };
 		0117D5F328C7D5BD00122D5C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0117D5F228C7D5BD00122D5C /* Alamofire */; };
 		0117D5F628C7D92000122D5C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0117D5F528C7D92000122D5C /* MainView.swift */; };
+		0120936528CA1874006AD346 /* ProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0120936428CA1874006AD346 /* ProfilView.swift */; };
+		0120936728CA188C006AD346 /* SavasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0120936628CA188C006AD346 /* SavasView.swift */; };
+		0120936928CA18A3006AD346 /* GenelBakisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0120936828CA18A3006AD346 /* GenelBakisView.swift */; };
+		0120936D28CA1AE2006AD346 /* AyarlarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0120936C28CA1AE2006AD346 /* AyarlarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,10 @@
 		0117D5EE28C7C7D800122D5C /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		0117D5F528C7D92000122D5C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0117D5F728C7DF2700122D5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0120936428CA1874006AD346 /* ProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilView.swift; sourceTree = "<group>"; };
+		0120936628CA188C006AD346 /* SavasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavasView.swift; sourceTree = "<group>"; };
+		0120936828CA18A3006AD346 /* GenelBakisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenelBakisView.swift; sourceTree = "<group>"; };
+		0120936C28CA1AE2006AD346 /* AyarlarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AyarlarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +124,44 @@
 			isa = PBXGroup;
 			children = (
 				0117D5F528C7D92000122D5C /* MainView.swift */,
+				0120936A28CA1AC8006AD346 /* Ayarlar */,
+				0120936128CA1851006AD346 /* GenelBakis */,
+				0120936328CA1863006AD346 /* Profil */,
+				0120936228CA185D006AD346 /* Savas */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		0120936128CA1851006AD346 /* GenelBakis */ = {
+			isa = PBXGroup;
+			children = (
+				0120936828CA18A3006AD346 /* GenelBakisView.swift */,
+			);
+			path = GenelBakis;
+			sourceTree = "<group>";
+		};
+		0120936228CA185D006AD346 /* Savas */ = {
+			isa = PBXGroup;
+			children = (
+				0120936628CA188C006AD346 /* SavasView.swift */,
+			);
+			path = Savas;
+			sourceTree = "<group>";
+		};
+		0120936328CA1863006AD346 /* Profil */ = {
+			isa = PBXGroup;
+			children = (
+				0120936428CA1874006AD346 /* ProfilView.swift */,
+			);
+			path = Profil;
+			sourceTree = "<group>";
+		};
+		0120936A28CA1AC8006AD346 /* Ayarlar */ = {
+			isa = PBXGroup;
+			children = (
+				0120936C28CA1AE2006AD346 /* AyarlarView.swift */,
+			);
+			path = Ayarlar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,10 +241,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0117D5ED28C7C6FA00122D5C /* LoginView.swift in Sources */,
+				0120936D28CA1AE2006AD346 /* AyarlarView.swift in Sources */,
 				0117D5EF28C7C7D800122D5C /* RegisterView.swift in Sources */,
+				0120936528CA1874006AD346 /* ProfilView.swift in Sources */,
 				0117D5DE28C7C31400122D5C /* WelcomeView.swift in Sources */,
+				0120936728CA188C006AD346 /* SavasView.swift in Sources */,
 				0117D5F628C7D92000122D5C /* MainView.swift in Sources */,
 				0117D5DC28C7C31400122D5C /* inzoGameApp.swift in Sources */,
+				0120936928CA18A3006AD346 /* GenelBakisView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
