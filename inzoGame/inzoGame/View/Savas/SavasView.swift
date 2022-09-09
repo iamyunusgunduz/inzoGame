@@ -17,35 +17,36 @@ struct SavasView: View {
                 NavigationLink(destination: ZayifView()) {
                     HStack{
                         Text("Zayif AV")
-                        Text("1-19 lv").padding(20).foregroundColor(Color.green)
-                    }
+                        Text("1-19 lv").foregroundColor(Color.green)
+                    }.padding(20)
                     
                 }
                 NavigationLink(destination: OrtaView()) {
                     HStack{
                         Text("Orta AV")
-                    Text("20-49 lv").padding(15).foregroundColor(Color.orange)
-                    }
+                    Text("20-49 lv").foregroundColor(Color.orange)
+                    }.padding(15)
                 }
                 NavigationLink(destination: GucluView()) {
                     HStack{
                         Text("Güçlü AV")
-                    Text("50-100 lv").padding(15).foregroundColor(Color.red)
-                    }
+                    Text("50-100 lv").foregroundColor(Color.red)
+                    }.padding(15)
                 }
                 Spacer()
                 Text("Rakip avi").padding(10)
+                
                 NavigationLink(destination: RastgeleRakipSavasView()) {
                     HStack{
-                        Text("Rastgele rakip").padding(20)
+                        Text("Rastgele rakip")
                         
-                    }
+                    }.padding(20)
                     
                 }
                 NavigationLink(destination: EsitVeyaGucluRakipView()) {
                     HStack{
-                        Text("Esit veya Guclu rakip").padding(10)
-                    }
+                        Text("Esit veya Guclu rakip")
+                    }.padding(20)
                 }
                 Spacer()
             }.navigationTitle( Text("WAR PAGE"))

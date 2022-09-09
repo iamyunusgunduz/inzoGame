@@ -31,15 +31,12 @@ struct LoginView: View {
                         extractedFunc()
                         
                     }
-                            Text("\(uyariMesaji)")
-                
-               
-               
+                           
                 
             }.navigationTitle("Login").fullScreenCover(isPresented: $sayfaGecisLogin) { MainView() }
-            
+         
         }
-        
+        Text(uyariMesaji)
     }
     
     
@@ -73,6 +70,15 @@ fileprivate func extractedFunc() -> DataRequest {
             }else{
                 uyariMesaji = "Tekrar deneyiniz"
             }
+        }else{
+            let data = response.data!
+            
+            let object = try? JSONSerialization.jsonObject(with: data, options: [])
+            
+            let jsonObject =  object as? [String: Any]
+           
+            let stateField2   = jsonObject?["message"] as? String
+            uyariMesaji = stateField2!
         }
     }
 }

@@ -19,6 +19,15 @@
 		0120936728CA188C006AD346 /* SavasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0120936628CA188C006AD346 /* SavasView.swift */; };
 		0120936928CA18A3006AD346 /* GenelBakisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0120936828CA18A3006AD346 /* GenelBakisView.swift */; };
 		0120936D28CA1AE2006AD346 /* AyarlarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0120936C28CA1AE2006AD346 /* AyarlarView.swift */; };
+		01F96B2C28CBB48E00C36FCA /* ZayifAvMahalleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F96B2B28CBB48E00C36FCA /* ZayifAvMahalleView.swift */; };
+		01F96B2E28CBB4A300C36FCA /* ZayifAvKoyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F96B2D28CBB4A300C36FCA /* ZayifAvKoyView.swift */; };
+		01F96B3028CBB4B200C36FCA /* ZayifAvSehirView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F96B2F28CBB4B200C36FCA /* ZayifAvSehirView.swift */; };
+		01F96B3628CBB72700C36FCA /* OrtaAvMahalleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F96B3528CBB72700C36FCA /* OrtaAvMahalleView.swift */; };
+		01F96B3828CBB73C00C36FCA /* OrtaAvKoyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F96B3728CBB73C00C36FCA /* OrtaAvKoyView.swift */; };
+		01F96B3A28CBB74B00C36FCA /* OrtaAvSehirView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F96B3928CBB74B00C36FCA /* OrtaAvSehirView.swift */; };
+		01F96B3C28CBB77200C36FCA /* GucluAvMahalleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F96B3B28CBB77200C36FCA /* GucluAvMahalleView.swift */; };
+		01F96B3E28CBB77E00C36FCA /* GucluAvKoyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F96B3D28CBB77E00C36FCA /* GucluAvKoyView.swift */; };
+		01F96B4028CBB78A00C36FCA /* GucluAvSehirView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F96B3F28CBB78A00C36FCA /* GucluAvSehirView.swift */; };
 		01FACCDA28CA8A3F00DB5322 /* ZayifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FACCD928CA8A3F00DB5322 /* ZayifView.swift */; };
 		01FACCDC28CA8A5000DB5322 /* OrtaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FACCDB28CA8A5000DB5322 /* OrtaView.swift */; };
 		01FACCDE28CA8A6A00DB5322 /* GucluView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FACCDD28CA8A6A00DB5322 /* GucluView.swift */; };
@@ -40,6 +49,15 @@
 		0120936628CA188C006AD346 /* SavasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavasView.swift; sourceTree = "<group>"; };
 		0120936828CA18A3006AD346 /* GenelBakisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenelBakisView.swift; sourceTree = "<group>"; };
 		0120936C28CA1AE2006AD346 /* AyarlarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AyarlarView.swift; sourceTree = "<group>"; };
+		01F96B2B28CBB48E00C36FCA /* ZayifAvMahalleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZayifAvMahalleView.swift; sourceTree = "<group>"; };
+		01F96B2D28CBB4A300C36FCA /* ZayifAvKoyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZayifAvKoyView.swift; sourceTree = "<group>"; };
+		01F96B2F28CBB4B200C36FCA /* ZayifAvSehirView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZayifAvSehirView.swift; sourceTree = "<group>"; };
+		01F96B3528CBB72700C36FCA /* OrtaAvMahalleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrtaAvMahalleView.swift; sourceTree = "<group>"; };
+		01F96B3728CBB73C00C36FCA /* OrtaAvKoyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrtaAvKoyView.swift; sourceTree = "<group>"; };
+		01F96B3928CBB74B00C36FCA /* OrtaAvSehirView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrtaAvSehirView.swift; sourceTree = "<group>"; };
+		01F96B3B28CBB77200C36FCA /* GucluAvMahalleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GucluAvMahalleView.swift; sourceTree = "<group>"; };
+		01F96B3D28CBB77E00C36FCA /* GucluAvKoyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GucluAvKoyView.swift; sourceTree = "<group>"; };
+		01F96B3F28CBB78A00C36FCA /* GucluAvSehirView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GucluAvSehirView.swift; sourceTree = "<group>"; };
 		01FACCD928CA8A3F00DB5322 /* ZayifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZayifView.swift; sourceTree = "<group>"; };
 		01FACCDB28CA8A5000DB5322 /* OrtaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrtaView.swift; sourceTree = "<group>"; };
 		01FACCDD28CA8A6A00DB5322 /* GucluView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GucluView.swift; sourceTree = "<group>"; };
@@ -123,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				0117D5F428C7D90B00122D5C /* Main */,
+				0120936228CA185D006AD346 /* Savas */,
 				0117D5E928C7C5AC00122D5C /* Welcome */,
 				0117D5EA28C7C5B800122D5C /* Login */,
 				0117D5EB28C7C5C100122D5C /* Register */,
@@ -137,7 +156,6 @@
 				0120936A28CA1AC8006AD346 /* Ayarlar */,
 				0120936128CA1851006AD346 /* GenelBakis */,
 				0120936328CA1863006AD346 /* Profil */,
-				0120936228CA185D006AD346 /* Savas */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -153,9 +171,9 @@
 		0120936228CA185D006AD346 /* Savas */ = {
 			isa = PBXGroup;
 			children = (
+				0120936628CA188C006AD346 /* SavasView.swift */,
 				01FACCD628CA89DB00DB5322 /* YaratikAvi */,
 				01FACCD728CA89E600DB5322 /* RakipAvi */,
-				0120936628CA188C006AD346 /* SavasView.swift */,
 			);
 			path = Savas;
 			sourceTree = "<group>";
@@ -176,12 +194,45 @@
 			path = Ayarlar;
 			sourceTree = "<group>";
 		};
-		01FACCD628CA89DB00DB5322 /* YaratikAvi */ = {
+		01F96B2828CBB19800C36FCA /* ZayifAv */ = {
 			isa = PBXGroup;
 			children = (
 				01FACCD928CA8A3F00DB5322 /* ZayifView.swift */,
+				01F96B2B28CBB48E00C36FCA /* ZayifAvMahalleView.swift */,
+				01F96B2D28CBB4A300C36FCA /* ZayifAvKoyView.swift */,
+				01F96B2F28CBB4B200C36FCA /* ZayifAvSehirView.swift */,
+			);
+			path = ZayifAv;
+			sourceTree = "<group>";
+		};
+		01F96B3128CBB66E00C36FCA /* OrtaAv */ = {
+			isa = PBXGroup;
+			children = (
 				01FACCDB28CA8A5000DB5322 /* OrtaView.swift */,
+				01F96B3528CBB72700C36FCA /* OrtaAvMahalleView.swift */,
+				01F96B3728CBB73C00C36FCA /* OrtaAvKoyView.swift */,
+				01F96B3928CBB74B00C36FCA /* OrtaAvSehirView.swift */,
+			);
+			path = OrtaAv;
+			sourceTree = "<group>";
+		};
+		01F96B3228CBB67D00C36FCA /* GucluAv */ = {
+			isa = PBXGroup;
+			children = (
 				01FACCDD28CA8A6A00DB5322 /* GucluView.swift */,
+				01F96B3B28CBB77200C36FCA /* GucluAvMahalleView.swift */,
+				01F96B3D28CBB77E00C36FCA /* GucluAvKoyView.swift */,
+				01F96B3F28CBB78A00C36FCA /* GucluAvSehirView.swift */,
+			);
+			path = GucluAv;
+			sourceTree = "<group>";
+		};
+		01FACCD628CA89DB00DB5322 /* YaratikAvi */ = {
+			isa = PBXGroup;
+			children = (
+				01F96B2828CBB19800C36FCA /* ZayifAv */,
+				01F96B3128CBB66E00C36FCA /* OrtaAv */,
+				01F96B3228CBB67D00C36FCA /* GucluAv */,
 			);
 			path = YaratikAvi;
 			sourceTree = "<group>";
@@ -271,20 +322,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01F96B3C28CBB77200C36FCA /* GucluAvMahalleView.swift in Sources */,
 				0117D5ED28C7C6FA00122D5C /* LoginView.swift in Sources */,
 				01FACCDE28CA8A6A00DB5322 /* GucluView.swift in Sources */,
+				01F96B3828CBB73C00C36FCA /* OrtaAvKoyView.swift in Sources */,
+				01F96B2C28CBB48E00C36FCA /* ZayifAvMahalleView.swift in Sources */,
 				0120936D28CA1AE2006AD346 /* AyarlarView.swift in Sources */,
+				01F96B3E28CBB77E00C36FCA /* GucluAvKoyView.swift in Sources */,
 				01FACCE228CA8AB300DB5322 /* EsitVeyaGucluRakipView.swift in Sources */,
 				0117D5EF28C7C7D800122D5C /* RegisterView.swift in Sources */,
 				0120936528CA1874006AD346 /* ProfilView.swift in Sources */,
+				01F96B4028CBB78A00C36FCA /* GucluAvSehirView.swift in Sources */,
+				01F96B2E28CBB4A300C36FCA /* ZayifAvKoyView.swift in Sources */,
 				0117D5DE28C7C31400122D5C /* WelcomeView.swift in Sources */,
 				0120936728CA188C006AD346 /* SavasView.swift in Sources */,
 				01FACCDA28CA8A3F00DB5322 /* ZayifView.swift in Sources */,
 				01FACCDC28CA8A5000DB5322 /* OrtaView.swift in Sources */,
 				01FACCE028CA8AA000DB5322 /* RastgeleRakipSavasView.swift in Sources */,
 				0117D5F628C7D92000122D5C /* MainView.swift in Sources */,
+				01F96B3A28CBB74B00C36FCA /* OrtaAvSehirView.swift in Sources */,
+				01F96B3628CBB72700C36FCA /* OrtaAvMahalleView.swift in Sources */,
 				0117D5DC28C7C31400122D5C /* inzoGameApp.swift in Sources */,
 				0120936928CA18A3006AD346 /* GenelBakisView.swift in Sources */,
+				01F96B3028CBB4B200C36FCA /* ZayifAvSehirView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
