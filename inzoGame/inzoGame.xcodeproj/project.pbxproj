@@ -19,6 +19,7 @@
 		0120936728CA188C006AD346 /* SavasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0120936628CA188C006AD346 /* SavasView.swift */; };
 		0120936928CA18A3006AD346 /* GenelBakisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0120936828CA18A3006AD346 /* GenelBakisView.swift */; };
 		0120936D28CA1AE2006AD346 /* AyarlarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0120936C28CA1AE2006AD346 /* AyarlarView.swift */; };
+		016D6C7E28CCEFF800C4A87C /* YaratikAviController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016D6C7D28CCEFF800C4A87C /* YaratikAviController.swift */; };
 		01F96B2C28CBB48E00C36FCA /* ZayifAvMahalleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F96B2B28CBB48E00C36FCA /* ZayifAvMahalleView.swift */; };
 		01F96B2E28CBB4A300C36FCA /* ZayifAvKoyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F96B2D28CBB4A300C36FCA /* ZayifAvKoyView.swift */; };
 		01F96B3028CBB4B200C36FCA /* ZayifAvSehirView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F96B2F28CBB4B200C36FCA /* ZayifAvSehirView.swift */; };
@@ -49,6 +50,7 @@
 		0120936628CA188C006AD346 /* SavasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavasView.swift; sourceTree = "<group>"; };
 		0120936828CA18A3006AD346 /* GenelBakisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenelBakisView.swift; sourceTree = "<group>"; };
 		0120936C28CA1AE2006AD346 /* AyarlarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AyarlarView.swift; sourceTree = "<group>"; };
+		016D6C7D28CCEFF800C4A87C /* YaratikAviController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YaratikAviController.swift; sourceTree = "<group>"; };
 		01F96B2B28CBB48E00C36FCA /* ZayifAvMahalleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZayifAvMahalleView.swift; sourceTree = "<group>"; };
 		01F96B2D28CBB4A300C36FCA /* ZayifAvKoyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZayifAvKoyView.swift; sourceTree = "<group>"; };
 		01F96B2F28CBB4B200C36FCA /* ZayifAvSehirView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZayifAvSehirView.swift; sourceTree = "<group>"; };
@@ -96,10 +98,11 @@
 		0117D5DA28C7C31400122D5C /* inzoGame */ = {
 			isa = PBXGroup;
 			children = (
-				0117D5F728C7DF2700122D5C /* Info.plist */,
+				016D6C7A28CCEFAC00C4A87C /* Controller */,
 				0117D5F028C7C7F300122D5C /* View */,
-				0117D5DF28C7C31500122D5C /* Assets.xcassets */,
 				0117D5DB28C7C31400122D5C /* inzoGameApp.swift */,
+				0117D5DF28C7C31500122D5C /* Assets.xcassets */,
+				0117D5F728C7DF2700122D5C /* Info.plist */,
 				0117D5E128C7C31500122D5C /* Preview Content */,
 			);
 			path = inzoGame;
@@ -192,6 +195,30 @@
 				0120936C28CA1AE2006AD346 /* AyarlarView.swift */,
 			);
 			path = Ayarlar;
+			sourceTree = "<group>";
+		};
+		016D6C7A28CCEFAC00C4A87C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				016D6C7B28CCEFB700C4A87C /* Av */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		016D6C7B28CCEFB700C4A87C /* Av */ = {
+			isa = PBXGroup;
+			children = (
+				016D6C7C28CCEFC200C4A87C /* YaratikAvi */,
+			);
+			path = Av;
+			sourceTree = "<group>";
+		};
+		016D6C7C28CCEFC200C4A87C /* YaratikAvi */ = {
+			isa = PBXGroup;
+			children = (
+				016D6C7D28CCEFF800C4A87C /* YaratikAviController.swift */,
+			);
+			path = YaratikAvi;
 			sourceTree = "<group>";
 		};
 		01F96B2828CBB19800C36FCA /* ZayifAv */ = {
@@ -328,6 +355,7 @@
 				01F96B3828CBB73C00C36FCA /* OrtaAvKoyView.swift in Sources */,
 				01F96B2C28CBB48E00C36FCA /* ZayifAvMahalleView.swift in Sources */,
 				0120936D28CA1AE2006AD346 /* AyarlarView.swift in Sources */,
+				016D6C7E28CCEFF800C4A87C /* YaratikAviController.swift in Sources */,
 				01F96B3E28CBB77E00C36FCA /* GucluAvKoyView.swift in Sources */,
 				01FACCE228CA8AB300DB5322 /* EsitVeyaGucluRakipView.swift in Sources */,
 				0117D5EF28C7C7D800122D5C /* RegisterView.swift in Sources */,

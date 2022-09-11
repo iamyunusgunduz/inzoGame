@@ -22,7 +22,7 @@ struct GucluView: View {
                 sayfaGecisGucluAvMahalle = true
                 
             }.sheet(isPresented: $sayfaGecisGucluAvMahalle) {
-                ZayifAvMahalleView(gelenSavasCarpaniDegeri:7)
+                ZayifAvMahalleView(gelenAvMinLevel:7)
                 
             }
             Text("Köy 66 - 82 lv").padding()

@@ -23,7 +23,7 @@ struct OrtaView: View {
                 sayfaGecisOrtaAvMahalle = true
                 
             }.sheet(isPresented: $sayfaGecisOrtaAvMahalle) {
-                ZayifAvMahalleView(gelenSavasCarpaniDegeri:4)
+                ZayifAvMahalleView(gelenAvMinLevel:4)
                 
             }
             Text("Köy 30 - 39 lv").padding()

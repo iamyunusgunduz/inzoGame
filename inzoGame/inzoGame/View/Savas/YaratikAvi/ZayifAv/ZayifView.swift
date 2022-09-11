@@ -11,6 +11,7 @@ struct ZayifView: View {
     @State private var sayfaGecisZayifAvMahalle:Bool = false
     @State private var sayfaGecisZayifAvKoy:Bool = false
     @State private var sayfaGecisZayifAvSehir:Bool = false
+ 
     var body: some View {
         
         NavigationView{
@@ -23,7 +24,8 @@ struct ZayifView: View {
                 sayfaGecisZayifAvMahalle = true
                 
             }.sheet(isPresented: $sayfaGecisZayifAvMahalle) {
-                ZayifAvMahalleView(gelenSavasCarpaniDegeri:1)
+               
+                ZayifAvMahalleView(gelenAvMinLevel:1,gelenAvMaxLevel:5)
                 
             }
             Text("Köy 6-10 lv").padding()

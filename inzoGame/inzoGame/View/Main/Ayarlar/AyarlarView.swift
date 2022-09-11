@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Alamofire
+
 
 struct AyarlarView: View {
     let userDefaults = UserDefaults.standard
@@ -15,7 +17,10 @@ struct AyarlarView: View {
         NavigationView {
            
                 Section {
-                    Text("Ayarlar")
+                    Text("Ayarlar").onAppear {
+                        
+                     
+                }
                     
                       
                     
@@ -34,6 +39,9 @@ struct AyarlarView: View {
                 
         }
     }
+    
+ 
+    
 }
 
 struct AyarlarView_Previews: PreviewProvider {

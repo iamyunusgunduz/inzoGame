@@ -9,25 +9,42 @@ import SwiftUI
 
 struct ZayifAvMahalleView: View {
     @Environment(\.presentationMode) var sunumModu
-    var gelenSavasCarpaniDegeri:Int?
+    var gelenAvMinLevel:Int?
+    var gelenAvMaxLevel:Int?
+    
+    let userDefaults = UserDefaults.standard
+    @State var username:String=""
+    
+    @State    var userLevel:String = " "
+    @State   var userBattleValue:String = " "
+    @State   var userGold:String = " "
+    @State  var userExp:String = " "
+    @State    var userHpNow:String = " "
+    @State    var userApPow:String = " "
+    @State   var userApDef:String = " "
+    
+    
     var body: some View {
        
         VStack{
+            
           let rastgeleSayi = Int.random(in: 1...5)
-            if rastgeleSayi == 1 || rastgeleSayi == 2 || rastgeleSayi == 3{
-                Text("Uzun arayiş sonunda bir ava rastladin ve alt ettin. \(rastgeleSayi)").padding(20).foregroundColor(Color.green)
-                // username ile  + tecrube para  - can
-                // degerler ya girdigim degerle otomatik artip azalcak yada ben kendim cekip uzerine update edicem
-                
+          Text("").onAppear {
+              veriCekmeMain()
+              veriCekmeMonster()
+           
+      }
+            let userLevelCasting = Int(userLevel) ?? -9999
+            
+            
+            if userLevelCasting == -9999 {
+                Text("sonuclar yukleniyor").padding()
             }
-            if rastgeleSayi == 4 {
-                Text("Gecenin karanliginda bir kisiyle karsilastin fakat elinden kacmayi basardi \(rastgeleSayi) ").padding(20).foregroundColor(Color.gray)
-                // + tecrube para  - can
+            
+            else {
+                Text("Rakip  cikti \(gelenAvMinLevel!) ,  \(gelenAvMaxLevel!)").padding()
             }
-            if rastgeleSayi == 5 {
-                Text("Dişine göre bir av buldun,  fakat  bu seferlik şansın yaver gitmedi. Senden güçlü gibiydi ! \(rastgeleSayi) ").padding(20).foregroundColor(Color.red)
-                // + tecrube para  - can
-            }
+            
             Button("TAMAM"){
                 self.sunumModu.wrappedValue.dismiss()
             }
@@ -35,6 +52,74 @@ struct ZayifAvMahalleView: View {
        
         
        
+    }
+    fileprivate func veriCekmeMonster() {
+     
+        print("max: \(gelenAvMaxLevel)")
+        print("min: \(gelenAvMinLevel)")
+        let url = URL(string: "http://yunusgunduz.site/inzoApi/public/api/monster?max=\(gelenAvMaxLevel!)&min=\(gelenAvMinLevel!)")
+        let session  = URLSession.shared
+        let task = session.dataTask(with: url!) { data, response, error in
+            if error != nil {
+                print(error?.localizedDescription as Any)
+            }else{
+                if data != nil {
+                    do {
+                        let jsonResponse = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)
+                        as? [String:Any]
+                        DispatchQueue.main.async {
+                            
+                            print(jsonResponse!["name"]!)
+                            
+                            
+                            //kasitli username yazmadim
+                            
+                          //   userLevel = jsonResponse!["level"]! as! String
+                            
+                            
+                            
+                        }
+                    }catch{
+                        print(error)
+                    }
+                }
+            }
+            
+        }.resume()
+    }
+    
+    fileprivate func veriCekmeMain() {
+        username = userDefaults.object(forKey: "username")! as! String
+        
+        let url = URL(string: "http://yunusgunduz.site/inzoApi/public/api/\(username)")
+        let session  = URLSession.shared
+        let task = session.dataTask(with: url!) { data, response, error in
+            if error != nil {
+                print(error?.localizedDescription as Any)
+            }else{
+                if data != nil {
+                    do {
+                        let jsonResponse = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)
+                        as? [String:Any]
+                        DispatchQueue.main.async {
+                            
+                            print(jsonResponse!["level"]!)
+                            
+                            
+                            //kasitli username yazmadim
+                            
+                             userLevel = jsonResponse!["level"]! as! String
+                            
+                            
+                            
+                        }
+                    }catch{
+                        print(error)
+                    }
+                }
+            }
+            
+        }.resume()
     }
 }
 
