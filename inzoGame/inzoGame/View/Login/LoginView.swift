@@ -27,7 +27,6 @@ struct LoginView: View {
                
                     Button("GIRIS YAP") {
                         print("Debug Username : \(username)")
-                        print("Debug Password : \(password)")
                         extractedFunc()
                         
                     }
@@ -53,24 +52,22 @@ fileprivate func extractedFunc() -> DataRequest {
             
             let jsonObject =  object as? [String: Any]
             
-            let tokenField   = jsonObject?["access_token"] as? String
+            let access_token   = jsonObject?["access_token"] as? String
             
-            let stateField   = jsonObject?["message"] as? String
+             
             
-            
-            if stateField == "success"{
-                
-                sayfaGecisLogin = true
+
                 userDefaults.set(username, forKey: "username")
-                userDefaults.set(password, forKey: "password")
-                userDefaults.set(tokenField, forKey: "tokenField")
-                
-                
+                userDefaults.set(access_token, forKey: "access_token")
+          
+            let usernamePrint = userDefaults.object(forKey: "username")! as! String
+            let tokenPrint = userDefaults.object(forKey: "access_token") ?? "none" 
+            print("Debug Login usernameDefaults: \(usernamePrint) ")
+            print("Debug Login tokenDefaults: \(tokenPrint) ")
+            
+            sayfaGecisLogin = true
                 
             }else{
-                uyariMesaji = "Tekrar deneyiniz"
-            }
-        }else{
             let data = response.data!
             
             let object = try? JSONSerialization.jsonObject(with: data, options: [])
@@ -78,6 +75,7 @@ fileprivate func extractedFunc() -> DataRequest {
             let jsonObject =  object as? [String: Any]
            
             let stateField2   = jsonObject?["message"] as? String
+            
             uyariMesaji = stateField2!
         }
     }

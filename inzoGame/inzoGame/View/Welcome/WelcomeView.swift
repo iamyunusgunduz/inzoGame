@@ -19,9 +19,9 @@ struct WelcomeView: View {
                 Spacer()
                     .onAppear{
                         var username = userDefaults.object(forKey: "username") as! String
-                    
+                        var token = userDefaults.object(forKey: "access_token") as! String
                       print("gitrdi")
-                        if      username != "none" {
+                        if      username != "none"  && token != "none"{
                             sayfaGecisWelcome = true
                             
                         }else {

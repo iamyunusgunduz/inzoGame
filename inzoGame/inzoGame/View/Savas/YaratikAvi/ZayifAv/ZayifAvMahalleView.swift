@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Alamofire
 
 struct ZayifAvMahalleView: View {
     @Environment(\.presentationMode) var sunumModu
@@ -14,6 +15,7 @@ struct ZayifAvMahalleView: View {
     
     let userDefaults = UserDefaults.standard
     @State var username:String?
+    @State var token:String?
     
     @State     var userLevel:String?
     @State    var userBattleValue:String?
@@ -40,8 +42,9 @@ struct ZayifAvMahalleView: View {
             
           let rastgeleSayi = Int.random(in: 1...5)
           Text("").onAppear {
-              veriCekmeMain()
-              veriCekmeMonster()
+              UserBilgileriCekme()
+              extractedFunc()
+              MonsterVeriCekme()
       }
             let userLevelCasting = Int(userLevel ?? "0") ?? -9999
             
@@ -88,83 +91,140 @@ struct ZayifAvMahalleView: View {
         
        
     }
-    fileprivate func veriCekmeMonster() {
-     
-        print("max: \(gelenAvMaxLevel!)")
-        print("min: \(gelenAvMinLevel!)")
-        let url = URL(string: "http://yunusgunduz.site/inzoApi/public/api/monster?max=\(gelenAvMaxLevel!)&min=\(gelenAvMinLevel!)")
-        let session  = URLSession.shared
-        let task = session.dataTask(with: url!) { data, response, error in
-            if error != nil {
-                print(error?.localizedDescription as Any)
-            }else{
-                if data != nil {
-                    do {
-                        let jsonResponse = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)
-                        as? [String:Any]
-                        DispatchQueue.main.async {
-                            
-                            print(jsonResponse!["name"]!)
-                            
-                            
-                            
-                            
-                            
-                            monsterName = jsonResponse!["name"]! as? String
-                            monsterLevel = (jsonResponse!["lvl"]! as! String)
-                            monsterGold = (jsonResponse!["cost_gold"]! as! String)
-                            monsterPow = (jsonResponse!["pow"]! as! String)
-                            monsterDef = (jsonResponse!["def"]! as! String)
-                        }
-                    }catch{
-                        print(error)
-                    }
-                }
-            }
+    // user veri cekme
+    
+    fileprivate func UserBilgileriCekme() -> DataRequest {
+        let usernameFunc = userDefaults.object(forKey: "username")! as! String
+        let token    = userDefaults.object(forKey: "access_token")! as! String
+        let headersa: HTTPHeaders = [
+           // "Authorization": "Bearer \(token)",
+            "Accept": "application/json"
+        ]
+        return AF.request("http://yunusgunduz.site/inzoApi/public/api/\(usernameFunc)", method:.get,encoding: JSONEncoding.default, headers: headersa) .responseJSON { [self] (response) in
             
-        }.resume()
+            
+            if response.response?.statusCode == 200{
+                let data = response.data!
+               
+                let object = try? JSONSerialization.jsonObject(with: data, options: [])
+                
+                let jsonResponse =  object as? [String: Any]
+          
+                
+                username = usernameFunc
+                userLevel = jsonResponse!["level"] as? String ?? "0"
+                userBattleValue = jsonResponse!["battle_value"]! as? String ?? "0"
+                userGold = jsonResponse!["gold"]! as? String ?? "0"
+                userExp = jsonResponse!["exp"]! as? String ?? "0"
+                userHpNow = jsonResponse!["hp_now"]! as? String ?? "0"
+                userApPow = jsonResponse!["ab_pow"]! as? String ?? "0"
+                userApDef = jsonResponse!["ab_def"]! as? String ?? "0"
+                 
+
+                
+              
+            }else{
+                let data = response.data!
+                
+                let object = try? JSONSerialization.jsonObject(with: data, options: [])
+                
+                let jsonObject =  object as? [String: Any]
+               
+                let msjm  = jsonObject?["lvl"] as? String
+                
+                print("Debug Error mnster message :  \(msjm!)")
+               
+            }
+        }
     }
     
-    fileprivate func veriCekmeMain() {
-        username = userDefaults.object(forKey: "username")! as! String
+    // Monster verileri cekme
+    fileprivate func MonsterVeriCekme() -> DataRequest {
         
-        let url = URL(string: "http://yunusgunduz.site/inzoApi/public/api/\(username ?? "admin")")
-        let session  = URLSession.shared
-        let task = session.dataTask(with: url!) { data, response, error in
-            if error != nil {
-                print(error?.localizedDescription as Any)
-            }else{
-                if data != nil {
-                    do {
-                        let jsonResponse = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)
-                        as? [String:Any]
-                        DispatchQueue.main.async {
-                            
-                            print(jsonResponse!["level"]!)
-                            
-                            
-                           
-                            
-                             userLevel = jsonResponse!["level"] as! String ?? "0"
-                            userBattleValue = jsonResponse!["battle_value"]! as! String ?? "0"
-                            userGold = jsonResponse!["gold"]! as! String ?? "0"
-                            userExp = jsonResponse!["exp"]! as! String ?? "0"
-                            userHpNow = jsonResponse!["hp_now"]! as! String ?? "0"
-                            userApPow = jsonResponse!["ab_pow"]! as! String ?? "0"
-                            userApDef = jsonResponse!["ab_def"]! as! String ?? "0"
-                           
-                            
-                            
-                            
-                        }
-                    }catch{
-                        print(error)
-                    }
-                }
-            }
+        let token    = userDefaults.object(forKey: "access_token")! as! String
+        let headersa: HTTPHeaders = [
+            "Authorization": "Bearer \(token)",
+            "Accept": "application/json"
+        ]
+        return AF.request("http://yunusgunduz.site/inzoApi/public/api/monster?max=\(gelenAvMaxLevel)&min=\(gelenAvMinLevel)", method:.get,encoding: JSONEncoding.default, headers: headersa) .responseJSON { [self] (response) in
             
-        }.resume()
+            
+            if response.response?.statusCode == 200{
+                let data = response.data!
+               
+                let object = try? JSONSerialization.jsonObject(with: data, options: [])
+                
+                let jsonResponse =  object as? [String: Any]
+          
+                
+             
+                monsterName = jsonResponse!["name"] as? String ?? "0"
+                print(monsterName)
+                print(gelenAvMinLevel!)
+                print(gelenAvMaxLevel!)
+                monsterLevel = jsonResponse!["lvl"]! as? String ?? "0"
+                monsterGold = jsonResponse!["cost_gold"]! as? String ?? "0"
+                monsterPow = jsonResponse!["pow"]! as? String ?? "0"
+                monsterDef = jsonResponse!["def"]! as? String ?? "0"
+                
+                
+              
+            }else{
+                let data = response.data!
+                
+                let object = try? JSONSerialization.jsonObject(with: data, options: [])
+                
+                let jsonObject =  object as? [String: Any]
+               
+                let msjm  = jsonObject?["lvl"] as? String
+                
+                print("Debug Error mnster message :  \(msjm!)")
+               
+            }
+        }
     }
+
+    // user update
+    fileprivate func extractedFunc() -> DataRequest {
+        let username = userDefaults.object(forKey: "username")! as! String
+        let token    = userDefaults.object(forKey: "access_token")! as! String
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(token)",
+            "Accept": "application/json"
+        ]
+                    
+        return AF.request("http://yunusgunduz.site/inzoApi/public/api/user-update/\(username)?gold=\(gelenAvMaxLevel! + gelenAvMinLevel!)&exp=\(gelenAvMinLevel!)&hp_now=\(-gelenAvMaxLevel!)", method:.put,encoding: JSONEncoding.default, headers: headers) .responseJSON { [self] (response) in
+            
+            
+            if response.response?.statusCode == 200{
+                let data = response.data!
+               
+                let object = try? JSONSerialization.jsonObject(with: data, options: [])
+                
+                let jsonObject =  object as? [String: Any]
+                
+                let stateField2   = jsonObject?["message"] as? String
+                print("Debug Error extractedFunc message :  \(stateField2!)")
+                
+                
+                
+                
+              
+            }else{
+               let data = response.data!
+                
+                let object = try? JSONSerialization.jsonObject(with: data, options: [])
+                
+                let jsonObject =  object as? [String: Any]
+               
+                let stateField1  = jsonObject?["message"] as? String
+                
+                print("Debug Error extractedFunc stateField1 :  \(stateField1)")
+               
+            }
+        }
+    }
+
 }
 
 struct ZayifAvMahalleView_Previews: PreviewProvider {
@@ -172,3 +232,6 @@ struct ZayifAvMahalleView_Previews: PreviewProvider {
         ZayifAvMahalleView()
     }
 }
+
+
+

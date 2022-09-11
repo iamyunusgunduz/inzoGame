@@ -31,7 +31,9 @@ struct AyarlarView: View {
                 .fullScreenCover(isPresented: $sayfaGecisAyarlar) { WelcomeView() }
                 .toolbar {
                     Button("Cikis yap"){
+                        veriCekmeMain()
                         userDefaults.set("none", forKey: "username")
+                        userDefaults.set("none", forKey: "access_token")
                         sayfaGecisAyarlar = true
                         print("none oldu")
                     }
@@ -40,7 +42,37 @@ struct AyarlarView: View {
         }
     }
     
- 
+    fileprivate func veriCekmeMain() {
+  
+        
+        let url = URL(string: "http://yunusgunduz.site/inzoApi/public/api/logout")
+        let session  = URLSession.shared
+        let task = session.dataTask(with: url!) { data, response, error in
+            if error != nil {
+                print(error?.localizedDescription as Any)
+            }else{
+                if data != nil {
+                    do {
+                        let jsonResponse = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)
+                        as? [String:Any]
+                        DispatchQueue.main.async {
+                            
+                            
+                            //print(jsonResponse!["level"]!)
+                            
+                            
+                            //kasitli username yazmadim
+                            
+                            
+                        }
+                    }catch{
+                        print(error)
+                    }
+                }
+            }
+            
+        }.resume()
+    }
     
 }
 
